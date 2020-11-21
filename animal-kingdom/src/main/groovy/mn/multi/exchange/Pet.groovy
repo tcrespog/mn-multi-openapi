@@ -12,7 +12,7 @@ class Pet {
 
     @JsonTypeInfo( use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "source")
     @JsonSubTypes([
-            @JsonSubTypes.Type(value = Dog, name = "cat"),
+            @JsonSubTypes.Type(value = Dog, name = "dog"),
             @JsonSubTypes.Type(value = Cat, name = "cat")
     ])
     Animal animal
