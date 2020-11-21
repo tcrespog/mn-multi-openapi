@@ -25,6 +25,6 @@ public class Pet {
 
     private String kind;
     @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "source")
-    @JsonSubTypes({@JsonSubTypes.Type(value = Dog.class, name = "cat"), @JsonSubTypes.Type(value = Cat.class, name = "cat")})
+    @JsonSubTypes([@JsonSubTypes.Type(value = Dog.class, name = "cat"), @JsonSubTypes.Type(value = Cat.class, name = "cat")])
     private Animal animal;
 }
