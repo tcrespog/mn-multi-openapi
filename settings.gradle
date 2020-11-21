@@ -1,0 +1,4 @@
+rootProject.name="mn-multi"
+
+include 'animal-kingdom'
+include 'pet-store'
