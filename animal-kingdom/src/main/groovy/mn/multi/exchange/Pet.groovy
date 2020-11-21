@@ -10,7 +10,7 @@ class Pet {
 
     String kind
 
-    @JsonTypeInfo( use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "source")
+    @JsonTypeInfo( use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.EXTERNAL_PROPERTY, property = "kind")
     @JsonSubTypes([
             @JsonSubTypes.Type(value = Dog, name = "dog"),
             @JsonSubTypes.Type(value = Cat, name = "cat")
