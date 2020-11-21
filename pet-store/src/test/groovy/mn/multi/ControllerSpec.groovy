@@ -7,6 +7,7 @@ import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import mn.multi.domain.Cat
 import mn.multi.exchange.Pet
+import mn.multi.repository.CatRepository
 import spock.lang.Specification
 
 import javax.inject.Inject
@@ -20,6 +21,9 @@ class ControllerSpec extends Specification {
     @Inject
     @Client("/")
     HttpClient client
+
+    @Inject
+    CatRepository catRepository
 
     void 'test the application is running'() {
         expect:
@@ -37,6 +41,9 @@ class ControllerSpec extends Specification {
         then:
         cat.name == "Garfield"
         cat.lives == 7
+
+        and:
+        catRepository.findById(cat.id).present
     }
 
 }
