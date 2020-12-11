@@ -10,6 +10,9 @@ group "mn.multi"
 repositories {
     mavenCentral()
     jcenter()
+    maven {
+        url "https://dl.bintray.com/micronaut/core-releases-local"
+    }
 }
 
 micronaut {
@@ -23,7 +26,7 @@ micronaut {
 
 dependencies {
     compileOnly("io.micronaut.data:micronaut-data-processor")
-    compileOnly("io.micronaut.openapi:micronaut-openapi")
+    compileOnly("io.micronaut.openapi:micronaut-openapi:2.2.1")
     implementation("io.micronaut:micronaut-validation")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("io.micronaut:micronaut-http-client")

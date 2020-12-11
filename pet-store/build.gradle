@@ -10,6 +10,9 @@ group "mn.multi"
 repositories {
     mavenCentral()
     jcenter()
+    maven {
+        url "https://dl.bintray.com/micronaut/core-releases-local"
+    }
 }
 
 micronaut {
@@ -22,7 +25,7 @@ micronaut {
 }
 
 dependencies {
-    compileOnly("io.micronaut.openapi:micronaut-openapi")
+    compileOnly("io.micronaut.openapi:micronaut-openapi:2.2.1")
     implementation("io.swagger.core.v3:swagger-annotations")
 
     compileOnly("io.micronaut.data:micronaut-data-processor")
